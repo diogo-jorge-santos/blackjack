@@ -43,9 +43,9 @@ class Deck:
 class Hand:
     
     def __init__(self):
-        self.cards = []  # start with an empty list as we did in the Deck class
+        self.cards = []  # start with an empty list 
         self.value = 0   # start with zero value
-        self.aces = 0    # add an attribute to keep track of aces
+        self.aces = 0    # number of aces
     
     def add_card(self,card):
         self.cards.append(card)
@@ -72,8 +72,6 @@ class Chips:
         self.total -= self.bet
         
 
-# FUNCTION DEFINITIONS:
-
 def take_bet(chips):
 
     while True:
@@ -98,7 +96,7 @@ def hit_or_stand(deck,hand):
         x = input("Would you like to Hit or Stand? Enter 'h' or 's' ")
         
         if x[0].lower() == 'h':
-            hit(deck,hand)  # hit() function defined above
+            hit(deck,hand) 
 
         elif x[0].lower() == 's':
             print("Player stands. Dealer is playing.")
@@ -140,14 +138,12 @@ def dealer_wins(player,dealer,chips):
     
 def push(player,dealer):
     print("Dealer and Player tie! It's a push.")
-    
-# GAMEPLAY!
 
 while True:
     print('Get as close to 21 as you can without going over!\n\
     Dealer hits until she reaches 17. Aces count as 1 or 11.')
     
-    # Create & shuffle the deck, deal two cards to each player
+    # Create and shuffle the deck, deal two cards to each player
     deck = Deck()
     deck.shuffle()
     
@@ -160,7 +156,7 @@ while True:
     dealer_hand.add_card(deck.deal())
     
     # Set up the Player's chips
-    player_chips = Chips()  # remember the default value is 100
+    player_chips = Chips()  
     
     # Prompt the Player for their bet:
     take_bet(player_chips)
